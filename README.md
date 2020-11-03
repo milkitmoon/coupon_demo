@@ -243,3 +243,35 @@
   }
 
   ```
+
+## 쿠폰조회
+- 사용자는 쿠폰의 정보를 조회할 수 있습니다.
+
+  * URL : GET http://localhost:8080/api/api/coupon/query?userID=[사용자정보]&couponNO=[쿠폰번호]
+  * 요청 Body
+
+  * 응답 Body
+  ```javascript
+
+  {
+    "code": "0",
+    "message": "성공했습니다",
+    "value": {
+      "couponCD": "000001",             /*  쿠폰코드  */
+      "couponNO": "0000010000000012",   /*  쿠폰번호  */
+      "userID": "milkit.moon",
+      "pubDT": "20201027",
+      "apprStartDT": "20201027",        /*  승인시작일자  */
+      "apprEndDT": "20211027",          /*  승인종료일자  */
+      "pubTime": "2020-10-27T08:35:39.675+00:00",
+      "useTime": null,
+      "faceAmt": 10000,                 /*  금액권쿠폰의 액면금액  */
+      "dcRate": 0.0,
+      "status": "2",                  /*  쿠폰상태 (1:등록, 2:발행, 3:사용, 4:폐기)  */
+      "useYN": "Y",
+      "couponNM": "1만원금액권쿠폰",   /*  쿠폰명  */
+      "couponDiv": "10"               /*  쿠폰구분 (10:금액권, 20:할인권)  */
+    }
+  }
+
+  ```
