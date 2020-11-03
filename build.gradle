@@ -1,0 +1,67 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.milkit'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	implementation 'com.opencsv:opencsv:4.4'
+
+	runtimeOnly 'com.h2database:h2'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile("org.apache.tomcat.embed:tomcat-embed-jasper:9.0.14")
+    compile("javax.servlet:jstl:1.2")
+    compile("net.coobird:thumbnailator:0.4.8")
+    compile("org.projectlombok:lombok:1.18.16")
+
+    compile("io.springfox:springfox-swagger2:2.9.2")
+    compile("io.springfox:springfox-swagger-ui:2.9.2")
+
+    annotationProcessor("org.projectlombok:lombok:1.18.16")
+}
+
+test {
+	useJUnitPlatform()
+}
+
+war {
+	enabled = true
+	baseName = 'coupon_demo'
+	archiveName = '${archiveBaseName}.${extension}'
+}

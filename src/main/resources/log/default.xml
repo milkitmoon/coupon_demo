@@ -1,0 +1,8 @@
+<included>
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy/MM/dd HH:mm:ss.SSS} [%thread] %-3level %logger{5}.%M \\(%line\\) - %msg %n"/>
+    <property name="FILE_LOG_PATTERN" value="%d{yyyy/MM/dd HH:mm:ss.SSS} %-5level --- [%thread] %logger{35}.%M \\(%line\\) : %msg %n"/>
+
+</included>
