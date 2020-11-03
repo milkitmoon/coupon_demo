@@ -55,10 +55,8 @@
 > Tips
 - **만약 lombok 관련 오류가 발생하면 아래의 url을 참조해 주세요**
 [https://stackoverflow.com/questions/63418817/how-do-i-get-lombok-to-work-with-visual-studio-code](https://stackoverflow.com/questions/63418817/how-do-i-get-lombok-to-work-with-visual-studio-code)
-
 [https://planbsw.tistory.com/109](https://planbsw.tistory.com/109)
 
----
 
 ## 실행 하기
 
