@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -148,49 +149,13 @@ public class Coupon implements Serializable {
     
 
     @ApiModelProperty(value="쿠폰명")
+    @Transient
     private String couponNM;
     
     @ApiModelProperty(value="쿠폰구분")
+    @Transient
     private String couponDiv;
     
-/*    
-    @ManyToOne(optional = false)
-    @JoinTable(name = "COUPON_INFO_COUPON",
-            joinColumns = @JoinColumn(name = "COUPON_CD", updatable = false, insertable = false, nullable=false),
-            inverseJoinColumns = @JoinColumn(name = "COUPON_CD", updatable = false, insertable = false, nullable=false))
-    private CouponInfo couponInfo;
-*/
-    
-/*
-    public Coupon(Long seq, String couponCD, String couponNM, String couponDiv, String couponNO, 
-    		int couponSeq, String userID, String registDT, String pubDT, String apprStartDT, String apprEndDT, Date pubTime, Date useTime, 
-    		Long faceAmt, Long pubAmt, Long useAmt, float dcRate, String status, String useYN, 
-    		Date instTime, Date updTime, String instUser, String updUser) {
-    	this.seq = seq;
-    	this.couponCD = couponCD;
-    	this.couponNM = couponNM;
-    	this.couponDiv = couponDiv;
-    	this.couponNO = couponNO;
-    	this.couponSeq = couponSeq;
-    	this.userID = userID;
-    	this.registDT = registDT;
-    	this.pubDT = pubDT;
-    	this.apprStartDT = apprStartDT;
-    	this.apprEndDT = apprEndDT;
-    	this.pubTime = pubTime;
-    	this.useTime = useTime;
-    	this.faceAmt = faceAmt;
-    	this.pubAmt = pubAmt;
-    	this.useAmt = useAmt;
-    	this.dcRate = dcRate;
-    	this.status = status;
-    	this.useYN = useYN;
-    	this.instTime = instTime;
-    	this.updTime = updTime;
-    	this.instUser = instUser;
-    	this.updUser = updUser;
-    }
-*/
 
 	@Override  
 	public String toString() {

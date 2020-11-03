@@ -137,12 +137,6 @@ public class CouponInfo implements Serializable {
     @ApiModelProperty(value="글수정자")
     private String updUser;
   
-/*    
-    @OneToMany(fetch = FetchType.LAZY) 
-    @JoinColumn(name = "COUPON_COUPON_CD", referencedColumnName = "COUPON_CD")
-    private Set<Coupon> couponList = new LinkedHashSet<Coupon>();
-*/
-
 	
 	@Override  
 	public String toString() {
