@@ -71,7 +71,7 @@
 ## 인증 요청
 - http://localhost:8080/login URL로 POST로 인증정보를 전달합니다.
 <img src="https://user-images.githubusercontent.com/61044774/93299272-c033e800-f82f-11ea-852d-9da348dfdf30.jpg" width="90%"></img>
-  * 사용자 계정은 admin / test 혹은 test / test로 지정할 수 있습니다. (admin은 ROLE_ADMIN 권한, test는 ROLE_MEMBER 권한)
+  * 사용자 계정은 admin / test 혹은 test / test로 지정할 수 있습니다.
   * 사용자 계정은 POST Body에 다음과 같은 형식의 json 값을 설정합니다.
   ```javascript
   {
