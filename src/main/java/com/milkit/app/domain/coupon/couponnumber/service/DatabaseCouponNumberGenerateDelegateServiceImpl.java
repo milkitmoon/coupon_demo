@@ -38,12 +38,19 @@ public class DatabaseCouponNumberGenerateDelegateServiceImpl implements CouponNu
 		builder.append(checksum);
 
 		String numericNO = builder.toString();
+		couponNO = convertAlphanumericNO(numericNO);
+		
+		return couponNO;
+	}
+
+	private String convertAlphanumericNO(String numericNO) {
+		String couponNO = null;
 		String alphanumericNO = Long.toString(Long.valueOf(numericNO), 36);
 
 		if(alphanumericNO != null && alphanumericNO.length() < CouponSizeCommon.COUPON_ALNU_NO_SIZE) {
 			couponNO = StringUtil.leftPad(String.valueOf(alphanumericNO), "0", CouponSizeCommon.COUPON_ALNU_NO_SIZE);
 		}
-		
+
 		return couponNO;
 	}
 
