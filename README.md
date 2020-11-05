@@ -40,15 +40,15 @@
 ## COUPON (쿠폰)
 - 실제 쿠폰정보가 담겨있는 쿠폰이다. 쿠폰번호를 기준으로 쿠폰의 현재 상태(발행, 사용, 폐기 등) 및 쿠폰 기본정보가 정의된다.
 쿠폰은 상기 쿠폰기본정보 테이블을 토대로 생성된다.
-<img src="https://user-images.githubusercontent.com/61044774/98198956-85b41500-1f6d-11eb-80c1-fd32973d3056.jpg" width="70%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198956-85b41500-1f6d-11eb-80c1-fd32973d3056.jpg" width="60%"></img>
 
 ## COUPON_LOG (쿠폰거래로그)
 - 쿠폰의 거래가 발생될 때마다 생성되는 로그 정보이다. 쿠폰이 발행/사용/취소/폐기 등의 거래가 이루어 질때 로그가 생성된다.
-<img src="https://user-images.githubusercontent.com/61044774/98198958-88af0580-1f6d-11eb-823d-bcef41b943b4.jpg" width="70%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198958-88af0580-1f6d-11eb-823d-bcef41b943b4.jpg" width="60%"></img>
 
 ## COUPON_NO_SEQ (쿠폰번호순번)
 - 쿠폰번호 중복을 방지하고자 쿠폰기본정보 별로 일련번호 테이블을 활용한다.
-<img src="(https://user-images.githubusercontent.com/61044774/98198961-8b115f80-1f6d-11eb-8a66-4a054eb3480d.jpg" width="70%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198961-8b115f80-1f6d-11eb-8a66-4a054eb3480d.jpg" width="60%"></img>
 
 # 4. 실행
 
