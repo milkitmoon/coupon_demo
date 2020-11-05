@@ -28,16 +28,19 @@ public class DatabaseCouponNumberGenerateDelegateServiceImpl implements CouponNu
 		
 		String couponCD = couponInfo.getCouponCD();
 		long result = couponNoSeqService.selectNextCouponnoSeq(couponCD);
+		String couponSeqStr = StringUtil.leftPad(String.valueOf(result), "0", CouponSizeCommon.COUPON_SEQ_SIZE);
 		
 		StringBuilder builder = new StringBuilder();
 		builder
 		.append(couponCD)
-		.append( StringUtil.leftPad(String.valueOf(result), "0", CouponSizeCommon.COUPON_SEQ_SIZE) );
+		.append(couponSeqStr);
 		
 		String checksum = couponNOChecksumService.getChecksum(builder.toString());
+log.debug("checksum:"+checksum);
 		builder.append(checksum);
 
 		String numericNO = builder.toString();
+log.debug("numericNO:"+numericNO);
 		couponNO = convertAlphanumericNO(numericNO);
 		
 		return couponNO;

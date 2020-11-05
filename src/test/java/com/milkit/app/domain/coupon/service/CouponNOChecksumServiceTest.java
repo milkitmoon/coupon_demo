@@ -40,18 +40,20 @@ class CouponNOChecksumServiceTest {
 	@Test
 	@DisplayName("쿠폰번호 checksum을 확인한다.")
 	public void getChecksum_test() throws Exception {
-		String source = "10000001000000009";
+		String source = "9000010000000001";
 		String result = couponNOChecksumService.getChecksum(source);
-log.debug(StringUtil.toJsonString(result));
+log.debug("result:"+result);
+		assertTrue(result != null);
 	}
 	
 	
 	@Test
 	@DisplayName("쿠폰번호 checksum이 맞는지 검증한다.")
 	public void checksum_test() throws Exception {
-		String source = "1000000100000000960";
+		String source = "900001000000000140";
 		boolean result = couponNOChecksumService.checksum(source);
-log.debug(StringUtil.toJsonString(result));
+log.debug("result:"+result);
+		assertTrue(result == true);
 	}
 	
 	

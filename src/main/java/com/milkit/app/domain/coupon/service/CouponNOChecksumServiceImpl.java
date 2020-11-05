@@ -24,19 +24,26 @@ public class CouponNOChecksumServiceImpl {
 	
     
     public String getChecksum(String source) {
+		String checksum = "";
 		int[] sourceArr = Arrays.stream(source.split("")).mapToInt(Integer::parseInt).toArray();
 		
         int sum = 0;
-        int[] key = {4, 2, 6, 9, 5, 1, 3, 7, 9, 1, 1, 8, 3, 7, 1, 3, 5};
+        int[] key = {4, 2, 6, 9, 5, 1, 3, 7, 9, 1, 1, 8, 3, 7, 1, 3, 5, 0, 9};
 
         for (int i = 0 ; i < CouponSizeCommon.COUPON_CHECKSUM_EXCEPT_SIZE ; i++) { 
         	sum += (key[i] * sourceArr[i]); 
         }
 
         int chkSum = (int) Math.floor( key[CouponSizeCommon.COUPON_CHECKSUM_EXCEPT_SIZE-1]*sourceArr[CouponSizeCommon.COUPON_CHECKSUM_EXCEPT_SIZE-1] / 10 );
-        sum +=chkSum;
+		sum +=chkSum;
+		
+		if(sum < 10) {
+			checksum = "0"+String.valueOf(sum);
+		} else {
+			checksum = String.valueOf(sum);
+		}
         
-        return String.valueOf(sum);
+        return checksum;
     }
 
 	public String getTotalChecksum(String source) {
@@ -50,12 +57,7 @@ public class CouponNOChecksumServiceImpl {
 			String targetStr = source.substring(0, CouponSizeCommon.COUPON_CHECKSUM_EXCEPT_SIZE);
 			String checksumStr = source.substring(CouponSizeCommon.COUPON_CHECKSUM_EXCEPT_SIZE, CouponSizeCommon.COUPON_NO_SIZE);
 			
-//log.debug("targetStr:"+targetStr);
-//log.debug("checksumStr:"+checksumStr);
-			
 			String expectChecksum = getChecksum(targetStr);
-			
-//log.debug("expectChecksum:"+expectChecksum);
 			
 			if(checksumStr.equals(expectChecksum)) {
 				checksum = true;

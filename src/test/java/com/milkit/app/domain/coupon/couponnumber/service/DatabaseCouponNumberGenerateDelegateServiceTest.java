@@ -61,8 +61,4 @@ log.debug("result:"+result);
 		assertTrue(result != null);
 	}
 
-
-
-
-
 }
