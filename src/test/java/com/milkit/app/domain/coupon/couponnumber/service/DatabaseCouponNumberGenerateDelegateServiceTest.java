@@ -56,11 +56,13 @@ class DatabaseCouponNumberGenerateDelegateServiceTest {
 		couponInfo.setPubAmt(9000l);
 		couponInfo.setDcRate(0.f);
 		
-				
 		String result = databaseCouponNumberGenerateDelegateService.generateCouponNumber(couponInfo);
 log.debug("result:"+result);
 		assertTrue(result != null);
 	}
+
+
+
 
 
 }

@@ -177,8 +177,22 @@ log.debug("result size: " + result.length);
 		return byteArray;
 	}
 
-    
-    
+	
+	@Test
+    public void paselongTest() throws NoSuchAlgorithmException {
+		Long source1 = 10000000012l;
+		String conv1 = Long.toString(Long.valueOf(source1), 36);
+		String result1 = Long.toString(Long.parseLong(conv1, 36));
 
+		Long source2 = 999999999999999999l;
+		String conv2 = Long.toString(Long.valueOf(source2), 36);
+		String result2 = Long.toString(Long.parseLong(conv2, 36));
+
+		log.debug("conv1: " + conv1);
+		log.debug("result1: " + result1);
+
+		log.debug("conv2: " + conv2);
+		log.debug("result2: " + result2);
+    }
 
 }

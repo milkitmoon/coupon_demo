@@ -129,7 +129,7 @@
     "message": "성공했습니다",
     "value": {
       "couponCD": "000001",             /*  쿠폰코드  */
-      "couponNO": "0000010000000012",   /*  쿠폰번호  */
+      "couponNO": "000019xtf1u6",   /*  쿠폰번호  */
       "userID": "milkit.moon",
       "pubDT": "20201027",
       "apprStartDT": "20201027",        /*  승인시작일자  */
@@ -157,7 +157,7 @@
   ```javascript
 
   {
-    "couponNO" : "0000010000000012",   /*  쿠폰번호  */
+    "couponNO" : "000019xtf1u6",   /*  쿠폰번호  */
     "userID" : "milkit.moon",          /*  사용자정보  */
     "reqUseAmt" : 7000                 /*  사용/할인 요청금액  */
   }
@@ -193,7 +193,7 @@
   ```javascript
 
   {
-    "couponNO" : "0000010000000012",    /*  쿠폰번호  */
+    "couponNO" : "000019xtf1u6",    /*  쿠폰번호  */
     "userID" : "milkit.moon",           /*  사용자정보  */
     "apprNO" : "10000001603787772876"   /*  거래번호 (쿠폰사용 시 응답받은 거래번호)  */
   }
@@ -226,7 +226,7 @@
   ```javascript
 
   {
-    "couponNO" : "0000010000000012",    /*  쿠폰번호  */
+    "couponNO" : "000019xtf1u6",    /*  쿠폰번호  */
     "userID" : "milkit.moon"            /*  사용자정보  */
   }
 
@@ -259,7 +259,7 @@
     "message": "성공했습니다",
     "value": {
       "couponCD": "000001",             /*  쿠폰코드  */
-      "couponNO": "0000010000000012",   /*  쿠폰번호  */
+      "couponNO": "000019xtf1u6",   /*  쿠폰번호  */
       "userID": "milkit.moon",
       "pubDT": "20201027",
       "apprStartDT": "20201027",        /*  승인시작일자  */

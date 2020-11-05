@@ -68,7 +68,7 @@ public class CouponCancelApproveHandlerServiceImpl extends AbstractCouponApprove
 		CouponLog cxlCouponLog = apprRequest.getCxlCouponLog();
 		
 		if(cxlCouponLog == null) {
-			throw new CouponServiceException(ErrorCodeEnum.NotExistCxlCouponLogException.getCode(), new String[]{cxlCouponLog.getApprNO()});
+			throw new CouponServiceException(ErrorCodeEnum.NotExistCxlCouponLogException.getCode(), new String[]{apprRequest.getApprNO()});
 		}
 		if( !coupon.getCouponNO().equals(cxlCouponLog.getCouponNO()) ) {				//취소대상 거래의 쿠폰번호와 취소요청 쿠폰번호 확인 
 			throw new CouponServiceException(ErrorCodeEnum.IncorrectCancelCouponNumberExeption.getCode(), new String[]{cxlCouponLog.getCouponNO(), cxlCouponLog.getApprNO()});

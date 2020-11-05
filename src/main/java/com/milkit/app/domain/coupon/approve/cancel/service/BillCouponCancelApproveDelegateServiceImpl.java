@@ -65,15 +65,18 @@ log.debug("updCoupon:"+updCoupon.toString());
 		try {
 			String cxlApprNO = apprRequest.getApprNO();
 			CouponLog cxlCouponLog = couponLogManagerService.getCouponLogByApprNO(cxlApprNO);
-			apprRequest.setCxlCouponLog(cxlCouponLog);
 
-			couponLog.setTradeType(TradeTypeEnum.CANCEL.getValue());
-			couponLog.setTradeDiv(cxlCouponLog.getTradeDiv());
-			couponLog.setProductCD(cxlCouponLog.getProductCD());
-		
-			couponLog.setReqUseAmt( cxlCouponLog.getReqUseAmt()*-1 );
-			couponLog.setUseAmt( cxlCouponLog.getUseAmt()*-1 );
-			couponLog.setChangeAmt( cxlCouponLog.getChangeAmt()*-1 );
+			if(cxlCouponLog != null) {
+				apprRequest.setCxlCouponLog(cxlCouponLog);
+
+				couponLog.setTradeType(TradeTypeEnum.CANCEL.getValue());
+				couponLog.setTradeDiv(cxlCouponLog.getTradeDiv());
+				couponLog.setProductCD(cxlCouponLog.getProductCD());
+			
+				couponLog.setReqUseAmt( cxlCouponLog.getReqUseAmt()*-1 );
+				couponLog.setUseAmt( cxlCouponLog.getUseAmt()*-1 );
+				couponLog.setChangeAmt( cxlCouponLog.getChangeAmt()*-1 );
+			}
 
 			couponLog.setCxlApprNO( cxlApprNO );		//취소로그에 취소요청 원거래번호 등록
 			

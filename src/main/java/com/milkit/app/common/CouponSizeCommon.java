@@ -9,16 +9,18 @@ import com.milkit.app.config.jwt.JwtTokenProvider;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+
 public class CouponSizeCommon {
 	
     public static final int COUPON_CD_SIZE = 6;
-    public static final int COUPON_SEQ_SIZE = 9;
+    public static final int COUPON_SEQ_SIZE = 10;
     public static final int COUPON_CHECKSUM_SIZE = 2;
-    
+
     public static final int COUPON_CHECKSUM_EXCEPT_SIZE = COUPON_CD_SIZE+COUPON_SEQ_SIZE;
     public static final int COUPON_NO_SIZE = COUPON_CHECKSUM_EXCEPT_SIZE+COUPON_CHECKSUM_SIZE;
+    public static final int COUPON_ALNU_NO_SIZE = 12;
     
+
     public static final  int COUPON_LOG_APPR_NO_SIZE = 20;
 
 	

@@ -31,7 +31,7 @@ public enum ErrorCodeEnum {
 	NotExistCouponDivException("611", "존재하지 않는 쿠폰구분입니다. 쿠폰구분코드:#{0}"),
 	DcPossMinAmtException("612", "할인쿠폰 사용이 가능한 최소사용금액에 미치지 못합니다. 할인쿠폰 최소사용금액:#{0}, 할인승인요청금액:#{1}"),
 	NotExistCouponException("613", "존재하지 않는 쿠폰입니다. 쿠폰번호:#{0}"),
-	NotExistCxlCouponLogException("614", "존재하지 않는 취소거래입니다. 승인번호:#{0}"),
+	NotExistCxlCouponLogException("614", "해당 승인번호로 사용거래가 존재하지 않습니다. 승인번호:#{0}"),
 	GenerateCouponLogException("615", "쿠폰로그 생성에 실패하였습니다."),
 	IncorrectCancelCouponNumberExeption("616", "취소대상 거래의 쿠폰번호와 취소요청 쿠폰번호가 일치하지 않습니다. 취소요청 쿠폰번호:#{0}, 취소요청 거래번호:#{1}"),
 	UnableCanceledCancelTradeException("617", "취소된 거래건은 취소할 수 없습니다. 취소요청 거래번호:#{0}, 취소요청 거래유형:#{1}"),
