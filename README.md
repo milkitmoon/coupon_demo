@@ -97,10 +97,10 @@
 ## API 호출
 - http://localhost:8080/api/api/coupon/publish 등과 같이 서버에서 제공하는 api를 호출하여 API 명세에 제공된 정보를 요청합니다.
 <img src="https://user-images.githubusercontent.com/61044774/91528741-025dbe00-e943-11ea-81af-2e4ca5a1d261.jpg" width="90%"></img>
-  * <span style="color:red">사용자는 API 호출 시 [4. 인증요청] 에서 응답받은 JWT Token 값을 HTTP Header의 Authorization 항목에 입력하여 전송하여야 합니다.</span>
+  * <span style="color:red">사용자는 API 호출 시 상기 [인증요청] 에서 응답받은 JWT accessToken 값을 HTTP Header의 Authorization 항목에 입력하여 전송하여야 합니다.</span>
     ex) Request HEADER의 Authorization 값 형식
     ```html
-    Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyTk0iOiLqtIDrpqzsnpAiLCJhdXRoUm9sZSI6IlJPTEVfQURNSU4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE2MDAyMzkxODcsImlhdCI6MTYwMDIzNzM4N30.vp16ZPTySBEUJd3PxQd9ng3hnMBmOVoWrZksnXbw_5o
+    Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyTk0iOiLqtIDrpqzsnpAiLCJhdXRoUm9sZSI6IlJPTEVfQURNSU4iLCJuYW1lIjoiYWRtaW4iLCJleHAiOjE2MDAyMzQxMjgsImlhdCI6MTYwMDIzMjMyOH0.hYTzcG5nDhdVn4OVbrrH7ybSLwBxq1Fm2O9A60uk8Zw
     ```
   * <span style="color:blue">서버는 API Request Header의 JWT Token을 확인하고 권한확인 및 접근제어를 수행합니다.</span>
 
