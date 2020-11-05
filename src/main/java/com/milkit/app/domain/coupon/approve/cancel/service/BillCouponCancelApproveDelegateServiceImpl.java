@@ -81,7 +81,6 @@ public class BillCouponCancelApproveDelegateServiceImpl implements CouponApprove
 			}
 
 		} catch (Exception ex) {
-ex.printStackTrace();
 			throw new CouponServiceException(ErrorCodeEnum.GenerateCouponLogException.getCode());
 		}
 		
