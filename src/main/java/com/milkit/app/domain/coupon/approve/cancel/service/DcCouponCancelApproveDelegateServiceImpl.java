@@ -56,7 +56,7 @@ public class DcCouponCancelApproveDelegateServiceImpl implements CouponApproveDe
 		cxlCouponLog.setUpdTime(currDate);
 		cxlCouponLog.setUpdUser(apprRequest.getUserID());
 		Coupon updCoupon = couponService.updateReturn(coupon, cxlCouponLog);	//취소 원거래 로그에 취소거래의 거래번호를 등록
-log.debug("updCoupon:"+updCoupon.toString());
+//log.debug("updCoupon:"+updCoupon.toString());
 
 		return useApprResponse;
 	}
