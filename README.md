@@ -63,7 +63,7 @@
 
 > 소스 main Application 실행하기
 - com.milkit.app.DemoApplication 을 IDE에서 run하여 바로 실행할 수 있습니다.
- <img src="https://user-images.githubusercontent.com/61044774/91526490-b1e46180-e93e-11ea-9c03-6385d281d944.jpg" width="90%"></img>
+ <img src="https://user-images.githubusercontent.com/61044774/98205256-2230e400-1f7b-11eb-98f6-0701d5218b1d.jpg" width="90%"></img>
 
 
 # 5. 인증
