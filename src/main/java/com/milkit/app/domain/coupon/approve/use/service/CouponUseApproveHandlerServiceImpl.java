@@ -36,8 +36,8 @@ public class CouponUseApproveHandlerServiceImpl extends AbstractCouponApproveHan
 	
 	
 	@Override
-	protected CouponApproveDelegateService<UseApprRequest, ?> getCouponApproveDelegateService(String couponDiv) throws Exception {
-		CouponApproveDelegateService<UseApprRequest, ?> couponApproveDelegateService = null;
+	protected CouponApproveDelegateService<UseApprRequest, ? extends ApprResponse> getCouponApproveDelegateService(String couponDiv) throws Exception {
+		CouponApproveDelegateService<UseApprRequest, ? extends ApprResponse> couponApproveDelegateService = null;
 		
 		if(couponDiv.equals(CouponDivEnum.BILL_COUPON.getValue())) {
 			couponApproveDelegateService = billCouponApproveDelegateService();
@@ -52,12 +52,12 @@ public class CouponUseApproveHandlerServiceImpl extends AbstractCouponApproveHan
 	
 	
 	@Bean
-    public CouponApproveDelegateService<UseApprRequest, ?> billCouponApproveDelegateService() throws Exception {
+    public CouponApproveDelegateService<UseApprRequest, ? extends ApprResponse> billCouponApproveDelegateService() throws Exception {
         return new BillCouponUseApprDelegateServiceImpl();
     }
 	
 	@Bean
-    public CouponApproveDelegateService<UseApprRequest, ?> dcCouponApproveDelegateService() throws Exception {
+    public CouponApproveDelegateService<UseApprRequest, ? extends ApprResponse> dcCouponApproveDelegateService() throws Exception {
         return new DcCouponUseApproveDelegateServiceImpl();
     }
 

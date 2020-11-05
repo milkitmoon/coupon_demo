@@ -38,8 +38,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CouponCancelApproveHandlerServiceImpl extends AbstractCouponApproveHandlerServiceImpl<CancelApprRequest, ApprResponse> {
 	
 	@Override
-	protected CouponApproveDelegateService<CancelApprRequest, ?> getCouponApproveDelegateService(String couponDiv) throws Exception {
-		CouponApproveDelegateService<CancelApprRequest, ?> couponApproveDelegateService = null;
+	protected CouponApproveDelegateService<CancelApprRequest, ? extends ApprResponse> getCouponApproveDelegateService(String couponDiv) throws Exception {
+		CouponApproveDelegateService<CancelApprRequest, ? extends ApprResponse> couponApproveDelegateService = null;
 
 		if(couponDiv.equals(CouponDivEnum.BILL_COUPON.getValue())) {
 			couponApproveDelegateService = billCouponCancelApproveDelegateService();
@@ -53,12 +53,12 @@ public class CouponCancelApproveHandlerServiceImpl extends AbstractCouponApprove
 	}
 	
 	@Bean
-    public CouponApproveDelegateService<CancelApprRequest, ?> billCouponCancelApproveDelegateService() throws Exception {
+    public CouponApproveDelegateService<CancelApprRequest, ? extends ApprResponse> billCouponCancelApproveDelegateService() throws Exception {
         return new BillCouponCancelApproveDelegateServiceImpl();
     }
 	
 	@Bean
-    public CouponApproveDelegateService<CancelApprRequest, ?> dcCouponCancelApproveDelegateService() throws Exception {
+    public CouponApproveDelegateService<CancelApprRequest, ? extends ApprResponse> dcCouponCancelApproveDelegateService() throws Exception {
         return new DcCouponCancelApproveDelegateServiceImpl();
     }
 	

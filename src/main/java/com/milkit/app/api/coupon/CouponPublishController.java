@@ -28,7 +28,7 @@ import com.milkit.app.domain.coupon.Coupon;
 import com.milkit.app.domain.coupon.approve.CouponApproveHandlerService;
 import com.milkit.app.domain.coupon.approve.cancel.service.CouponCancelApproveHandlerServiceImpl;
 import com.milkit.app.domain.coupon.approve.discard.service.CouponDiscardHandlerServiceImpl;
-import com.milkit.app.domain.coupon.approve.use.service.CouponApproveHandlerServiceImpl;
+import com.milkit.app.domain.coupon.approve.use.service.CouponUseApproveHandlerServiceImpl;
 import com.milkit.app.domain.coupon.publish.service.CouponPublishHandlerServiceImpl;
 import com.milkit.app.domain.coupon.query.service.CouponQueryHandlerServiceImpl;
 import com.milkit.app.domain.userinfo.UserInfo;

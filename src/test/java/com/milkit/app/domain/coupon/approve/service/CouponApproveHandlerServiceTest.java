@@ -28,7 +28,7 @@ import com.milkit.app.common.exception.handler.ApiResponseEntityExceptionHandler
 import com.milkit.app.config.jwt.JwtToken;
 import com.milkit.app.config.jwt.JwtTokenProvider;
 import com.milkit.app.domain.coupon.Coupon;
-import com.milkit.app.domain.coupon.approve.use.service.CouponApproveHandlerServiceImpl;
+import com.milkit.app.domain.coupon.approve.use.service.CouponUseApproveHandlerServiceImpl;
 import com.milkit.app.domain.coupon.couponnumber.service.CouponNumberGenerateDelegateService;
 import com.milkit.app.domain.coupon.couponnumber.service.DatabaseCouponNumberGenerateDelegateServiceImpl;
 import com.milkit.app.domain.coupon.publish.service.AutoPublishCouponDelegateServiceImpl;
@@ -58,7 +58,7 @@ class CouponApproveHandlerServiceTest {
     private AutoPublishCouponDelegateServiceImpl autoPublishCouponDelegateService;
 	
 	@Autowired
-    private CouponApproveHandlerServiceImpl couponApproveManagerServiceImpl;
+    private CouponUseApproveHandlerServiceImpl couponApproveManagerServiceImpl;
 
 
 	
