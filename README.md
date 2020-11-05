@@ -16,11 +16,6 @@
 - Database : H2 (in memory)
 - OAS : swagger
 
-> swagger API명세 페이지 보기
-- 어플리케이션 기동 후 아래와 같이 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 접속하여 API페이지를 조회할 수 있습니다.
-<img src="https://user-images.githubusercontent.com/61044774/97953836-0bf11f80-1de5-11eb-857c-c30ceb991fea.jpg" width="90%"></img>
-
-
 > H2 database 웹콘솔 보기
 - H2 웹console 접속경로는 다음과 같습니다. [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/)
 <img src="https://user-images.githubusercontent.com/61044774/85590819-b0b56080-b67f-11ea-8415-3eb50f5b82b8.jpg" width="90%"></img>
@@ -276,3 +271,8 @@
   }
 
   ```
+
+## swagger API명세 페이지 보기
+> 어플리케이션 기동 후 아래와 같이 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 접속하여 API페이지를 조회할 수 있습니다.
+<img src="https://user-images.githubusercontent.com/61044774/97953836-0bf11f80-1de5-11eb-857c-c30ceb991fea.jpg" width="90%"></img>
+
