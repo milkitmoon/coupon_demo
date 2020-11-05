@@ -44,7 +44,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile('org.apache.commons:commons-lang3:3.0')
 	compile("org.apache.tomcat.embed:tomcat-embed-jasper:9.0.14")
     compile("javax.servlet:jstl:1.2")
     compile("net.coobird:thumbnailator:0.4.8")

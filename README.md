@@ -1,9 +1,9 @@
 # 1. 개요
-- 간단한 쿠폰인증 서버를 개발하였습니다.
+- 간단한 쿠폰승인 서버를 개발하였습니다.
 - 서버는 쿠폰을 발행합니다. (금액쿠폰과 할인쿠폰이 있음)
 - 서버는 쿠폰을 사용인증하거나 인증된 쿠폰을 취소할 수 있습니다.
 - 서버는 쿠폰을 폐기할 수 있습니다.
-- 인증은 기본적으로 JWT를 사용하며 로그인 성공 후 JWT 토큰을 HTTP HEADER에 삽입하여야 합니다.
+> 인증은 기본적으로 JWT를 사용하며, 쿠폰API를 사용하기 위해서는 로그인 성공 후 JWT 토큰을 HTTP HEADER에 삽입하여야 합니다.
 
 
 # 2. 기술명세
@@ -35,20 +35,20 @@
 
 ## COUPON_INFO (쿠폰기본정보)
 - 쿠폰에 대한 기본적인 설정정보를 포함하고 있는 마스터 테이블이다. 쿠폰에 대한 구분이나 승인유효기간 등 쿠폰속성 및 승인에 대한 정보가 정의된다.
-<img src="https://user-images.githubusercontent.com/61044774/97956635-85d8d700-1dec-11eb-81f3-2c02ab0c06b8.jpg" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198857-50a7c280-1f6d-11eb-87b8-bd3ac4cbfe26.jpg" width="100%"></img>
 
 ## COUPON (쿠폰)
 - 실제 쿠폰정보가 담겨있는 쿠폰이다. 쿠폰번호를 기준으로 쿠폰의 현재 상태(발행, 사용, 폐기 등) 및 쿠폰 기본정보가 정의된다.
 쿠폰은 상기 쿠폰기본정보 테이블을 토대로 생성된다.
-<img src="https://user-images.githubusercontent.com/61044774/97957118-b1a88c80-1ded-11eb-9a11-7a6cbd95e9e7.jpg" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198956-85b41500-1f6d-11eb-80c1-fd32973d3056.jpg" width="100%"></img>
 
 ## COUPON_LOG (쿠폰거래로그)
 - 쿠폰의 거래가 발생될 때마다 생성되는 로그 정보이다. 쿠폰이 발행/사용/취소/폐기 등의 거래가 이루어 질때 로그가 생성된다.
-<img src="https://user-images.githubusercontent.com/61044774/97957177-d997f000-1ded-11eb-8227-151b88e6f0c8.jpg" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198958-88af0580-1f6d-11eb-823d-bcef41b943b4.jpg" width="100%"></img>
 
 ## COUPON_NO_SEQ (쿠폰번호순번)
 - 쿠폰번호 중복을 방지하고자 쿠폰기본정보 별로 일련번호 테이블을 활용한다.
-<img src="https://user-images.githubusercontent.com/61044774/97956635-85d8d700-1dec-11eb-81f3-2c02ab0c06b8.jpg" width="100%"></img>
+<img src="(https://user-images.githubusercontent.com/61044774/98198961-8b115f80-1f6d-11eb-8a66-4a054eb3480d.jpg" width="100%"></img>
 
 # 4. 실행
 
