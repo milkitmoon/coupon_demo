@@ -74,13 +74,13 @@ log.debug("updCoupon:"+updCoupon.toString());
 				couponLog.setTradeDiv(cxlCouponLog.getTradeDiv());
 				couponLog.setProductCD(cxlCouponLog.getProductCD());
 				
-			
 				couponLog.setReqUseAmt( cxlCouponLog.getReqUseAmt()*-1 );
 				couponLog.setDcAmt( cxlCouponLog.getDcAmt()*-1 );
 				couponLog.setUseAmt( cxlCouponLog.getUseAmt()*-1 );
+				
+				couponLog.setCxlApprNO( cxlApprNO );		//취소로그에 취소요청 원거래번호 등록
 			}
-
-			couponLog.setCxlApprNO( cxlApprNO );		//취소로그에 취소요청 원거래번호 등록			
+			
 		} catch (Exception ex) {
 			throw new CouponServiceException(ErrorCodeEnum.GenerateCouponLogException.getCode());
 		}

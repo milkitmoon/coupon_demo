@@ -76,10 +76,10 @@ log.debug("updCoupon:"+updCoupon.toString());
 				couponLog.setReqUseAmt( cxlCouponLog.getReqUseAmt()*-1 );
 				couponLog.setUseAmt( cxlCouponLog.getUseAmt()*-1 );
 				couponLog.setChangeAmt( cxlCouponLog.getChangeAmt()*-1 );
+				
+				couponLog.setCxlApprNO( cxlApprNO );		//취소로그에 취소요청 원거래번호 등록
 			}
 
-			couponLog.setCxlApprNO( cxlApprNO );		//취소로그에 취소요청 원거래번호 등록
-			
 		} catch (Exception ex) {
 ex.printStackTrace();
 			throw new CouponServiceException(ErrorCodeEnum.GenerateCouponLogException.getCode());
