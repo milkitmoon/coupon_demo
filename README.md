@@ -31,8 +31,9 @@
 - Password : [없음]
 
 
-# 3. 쿠폰 테이블 설계
-
+# 3. 쿠폰에 테이블 설계
+쿠폰서비스를 위한 기본 테이블 설계
+<br>
 ## COUPON_INFO (쿠폰기본정보)
 - 쿠폰에 대한 기본적인 설정정보를 포함하고 있는 마스터 테이블이다. 쿠폰에 대한 구분이나 승인유효기간 등 쿠폰속성 및 승인에 대한 정보가 정의된다.  
 <img src="https://user-images.githubusercontent.com/61044774/98198857-50a7c280-1f6d-11eb-87b8-bd3ac4cbfe26.jpg" width="80%"></img>
