@@ -36,7 +36,7 @@
 <br>
 ## COUPON_INFO (쿠폰기본정보)
 - 쿠폰에 대한 기본적인 설정정보를 포함하고 있는 마스터 테이블이다. 쿠폰에 대한 구분이나 승인유효기간 등 쿠폰속성 및 승인에 대한 정보가 정의된다.  
-<img src="https://user-images.githubusercontent.com/61044774/98198857-50a7c280-1f6d-11eb-87b8-bd3ac4cbfe26.jpg" width="80%"></img>
+<img src="https://user-images.githubusercontent.com/61044774/98198857-50a7c280-1f6d-11eb-87b8-bd3ac4cbfe26.jpg" width="76%"></img>
 
 ## COUPON (쿠폰)
 - 실제 쿠폰정보가 담겨있는 쿠폰이다. 쿠폰번호를 기준으로 쿠폰의 현재 상태(발행, 사용, 폐기 등) 및 쿠폰 기본정보가 정의된다.
