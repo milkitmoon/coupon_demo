@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class DcCouponApproveDelegateServiceImpl implements CouponApproveDelegateService<UseApprRequest, DcUseApprResponse>, CouponLogSupplier<UseApprRequest> {
+public class DcCouponUseApproveDelegateServiceImpl implements CouponApproveDelegateService<UseApprRequest, DcUseApprResponse>, CouponLogSupplier<UseApprRequest> {
 
 	@Autowired
     private CouponServiceImpl couponService;

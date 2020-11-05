@@ -31,21 +31,20 @@ public class CouponLogManagerServiceImpl {
 	private CouponLogServiceImpl couponLogService;
 
 
-	public <T extends ApprRequest> CouponLog getProtoCouponLog(Coupon coupon, T t,  CouponLogSupplier couponLogSupplier) throws Exception {
+	public <T extends ApprRequest> CouponLog getProtoCouponLog(Coupon coupon, T t,  CouponLogSupplier<T> couponLogSupplier) throws Exception {
 		return couponLogSupplier.addedCouponLog(t, coupon, generateProtoCouponLog(coupon, t));
 	}
 	
 	public void insertCouponLog(CouponLog couponLog) {
 		try {
 			CouponLog ressult = couponLogService.insert(couponLog);
-			
-log.debug(ressult.toString());
+//log.debug(ressult.toString());
 		} catch(Exception ex) {
 			log.trace(ex.getMessage(), ex);
 		}
 	}
 	
-	public <T extends ApprRequest> void insertCouponLog(CouponLogSupplier couponLogSupplier, Coupon coupon, T t, String resultCD) throws Exception {
+	public <T extends ApprRequest> void insertCouponLog(CouponLogSupplier<T> couponLogSupplier, Coupon coupon, T t, String resultCD) throws Exception {
 		CouponLog genCouponLog = couponLogSupplier.addedCouponLog(t, coupon, generateProtoCouponLog(coupon, t));
 		genCouponLog.setResultCD(resultCD);
 		

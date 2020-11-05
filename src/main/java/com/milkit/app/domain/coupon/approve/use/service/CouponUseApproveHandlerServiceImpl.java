@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
-public class CouponApproveHandlerServiceImpl extends AbstractCouponApproveHandlerServiceImpl<UseApprRequest, ApprResponse> {
+public class CouponUseApproveHandlerServiceImpl extends AbstractCouponApproveHandlerServiceImpl<UseApprRequest, ApprResponse> {
 	
 	
 	@Override
@@ -53,12 +53,12 @@ public class CouponApproveHandlerServiceImpl extends AbstractCouponApproveHandle
 	
 	@Bean
     public CouponApproveDelegateService<UseApprRequest, ?> billCouponApproveDelegateService() throws Exception {
-        return new BillCouponApprDelegateServiceImpl();
+        return new BillCouponUseApprDelegateServiceImpl();
     }
 	
 	@Bean
     public CouponApproveDelegateService<UseApprRequest, ?> dcCouponApproveDelegateService() throws Exception {
-        return new DcCouponApproveDelegateServiceImpl();
+        return new DcCouponUseApproveDelegateServiceImpl();
     }
 
 	@Override

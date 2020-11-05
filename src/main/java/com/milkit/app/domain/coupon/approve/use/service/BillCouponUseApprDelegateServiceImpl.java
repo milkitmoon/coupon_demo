@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class BillCouponApprDelegateServiceImpl implements CouponApproveDelegateService<UseApprRequest, BillUseApprResponse>, CouponLogSupplier<UseApprRequest> {
+public class BillCouponUseApprDelegateServiceImpl implements CouponApproveDelegateService<UseApprRequest, BillUseApprResponse>, CouponLogSupplier<UseApprRequest> {
 	
 	@Autowired
     private CouponServiceImpl couponService;
@@ -46,7 +46,7 @@ public class BillCouponApprDelegateServiceImpl implements CouponApproveDelegateS
 		billUseApprResponse.setChangeAmt(couponLog.getChangeAmt());
 
 		Coupon updCoupon = couponService.update(coupon);
-log.debug("updCoupon:"+updCoupon.toString());
+//log.debug("updCoupon:"+updCoupon.toString());
 		
 		return billUseApprResponse;
 	}
@@ -66,7 +66,7 @@ log.debug("updCoupon:"+updCoupon.toString());
 			couponLog.setUseAmt(useAmt);
 			couponLog.setChangeAmt(changeAmt);
 		} catch (Exception ex) {
-ex.printStackTrace();
+//ex.printStackTrace();
 			throw new CouponServiceException(ErrorCodeEnum.GenerateCouponLogException.getCode());
 		}
 		
