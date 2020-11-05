@@ -36,11 +36,10 @@ public class DatabaseCouponNumberGenerateDelegateServiceImpl implements CouponNu
 		.append(couponSeqStr);
 		
 		String checksum = couponNOChecksumService.getChecksum(builder.toString());
-log.debug("checksum:"+checksum);
 		builder.append(checksum);
 
 		String numericNO = builder.toString();
-log.debug("numericNO:"+numericNO);
+//log.debug("numericNO:"+numericNO);
 		couponNO = convertAlphanumericNO(numericNO);
 		
 		return couponNO;
