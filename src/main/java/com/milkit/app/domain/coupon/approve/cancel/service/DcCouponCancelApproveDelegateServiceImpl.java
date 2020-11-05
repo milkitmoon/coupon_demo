@@ -64,13 +64,13 @@ log.debug("updCoupon:"+updCoupon.toString());
 	@Override
 	public CouponLog addedCouponLog(CancelApprRequest apprRequest, Coupon coupon, CouponLog couponLog) throws ServiceException {
 		try {
+			couponLog.setTradeType(TradeTypeEnum.CANCEL.getValue());
+
 			String cxlApprNO = apprRequest.getApprNO();
 			CouponLog cxlCouponLog = couponLogManagerService.getCouponLogByApprNO(cxlApprNO);
 			
 			if(cxlCouponLog != null) {
 				apprRequest.setCxlCouponLog(cxlCouponLog);
-
-				couponLog.setTradeType(TradeTypeEnum.CANCEL.getValue());
 				couponLog.setTradeDiv(cxlCouponLog.getTradeDiv());
 				couponLog.setProductCD(cxlCouponLog.getProductCD());
 				
