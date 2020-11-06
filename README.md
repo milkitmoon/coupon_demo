@@ -63,6 +63,7 @@
 # 5. 인증
 > 서버에서 제공되는 api를 호출하기 위해서는 먼저 인증을 수행해야 합니다.
 인증은 jwt 형식의 토큰방식으로 진행됩니다.
+
 ## 인증 요청
 - http://localhost:8080/login URL로 POST로 인증정보를 전달합니다.
 <img src="https://user-images.githubusercontent.com/61044774/93299272-c033e800-f82f-11ea-852d-9da348dfdf30.jpg" width="90%"></img>
@@ -88,7 +89,7 @@
   ```
 ---
 
-## API 호출
+## API 호출 예
 - http://localhost:8080/api/api/coupon/publish 등과 같이 서버에서 제공하는 api를 호출하여 API 명세에 제공된 정보를 요청합니다.
 <img src="https://user-images.githubusercontent.com/61044774/98206411-2fe76900-1f7d-11eb-8a57-2be3cc28c694.jpg" width="90%"></img>
   * <span style="color:red">사용자는 API 호출 시 상기 [인증요청] 에서 응답받은 JWT accessToken 값을 HTTP Header의 Authorization 항목에 입력하여 전송하여야 합니다.</span>
