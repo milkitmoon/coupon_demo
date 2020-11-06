@@ -8,7 +8,6 @@
 
 # 2. 기술명세
 - 언어 : Java 1.8
-- IDE : VSCode 1.5
 - 프레임워크 : spring boot 2.3.1
 - 의존성 & 빌드 관리 : gradle
 - 인증 : spring security, jwt
