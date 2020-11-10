@@ -47,9 +47,6 @@ public class CouponQueryHandlerServiceImpl implements CouponApproveHandlerServic
 
 	public Coupon approve(ApprRequest apprRequest) throws Exception {
 		Coupon coupon = couponService.getCoupon(apprRequest.getCouponNO());
-		if(coupon == null) {
-			throw new ServiceException(ErrorCodeEnum.NotExistCouponException.getCode(), new String[]{apprRequest.getCouponNO()});
-		}
 		CouponInfo couponInfo = coupon.getCouponInfo();
 		if(couponInfo == null) {
 			throw new ServiceException(ErrorCodeEnum.NotExistCouponInfoException.getCode(), new String[]{coupon.getCouponCD()});

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.milkit.app.common.ErrorCodeEnum;
+import com.milkit.app.common.exception.ServiceException;
 import com.milkit.app.domain.coupon.Coupon;
 import com.milkit.app.domain.coupon.dao.CouponDao;
 import com.milkit.app.domain.coupon.dao.CouponNativeDao;
@@ -38,7 +40,8 @@ public class CouponServiceImpl {
     }
 
 	public Coupon getCoupon(String couponNO) throws Exception {
-		return couponDao.findByCouponNO(couponNO);
+		return couponDao.findByCouponNO(couponNO)
+						.orElseThrow(() -> new ServiceException(ErrorCodeEnum.NotExistCouponException.getCode(), new String[]{couponNO}));
 	}
 
 	public int getPublishedCouponQty(String couponCD) throws Exception {
@@ -46,7 +49,8 @@ public class CouponServiceImpl {
 	}
 	
 	public Coupon getPreRegistCoupon(String couponNO) throws Exception {
-		return couponNativeDao.findPreRegistCoupon(couponNO);
+		return couponNativeDao.findPreRegistCoupon(couponNO)
+							.orElseThrow(() -> new ServiceException(ErrorCodeEnum.NotExistCouponException.getCode(), new String[]{couponNO}));
 	}
 
 	public Coupon publishPreRegistCoupon(Coupon coupon) throws Exception {

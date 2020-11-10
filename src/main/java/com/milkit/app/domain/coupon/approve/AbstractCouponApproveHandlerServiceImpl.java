@@ -31,9 +31,6 @@ public abstract class AbstractCouponApproveHandlerServiceImpl<T extends ApprRequ
 
 	public K approve(T t) throws Exception {
 		Coupon coupon = couponService.getCoupon(t.getCouponNO());
-		if(coupon == null) {
-			throw new ServiceException(ErrorCodeEnum.NotExistCouponException.getCode(), new String[]{t.getCouponNO()});
-		}
 		CouponInfo couponInfo = coupon.getCouponInfo();
 		if(couponInfo == null) {
 			throw new ServiceException(ErrorCodeEnum.NotExistCouponInfoException.getCode(), new String[]{coupon.getCouponCD()});

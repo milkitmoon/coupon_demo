@@ -22,10 +22,7 @@ public class PreRegistPublishCouponDelegateServiceImpl implements CouponPublishD
 	public Coupon publish(CouponInfo couponInfo, PublishRequest publishRequest) throws Exception {
 		String couponCD = couponInfo.getCouponCD();
 		Coupon resultCoupon = couponService.getPreRegistCoupon(couponCD);
-		
-		if(resultCoupon == null) {
-			throw new CouponServiceException(ErrorCodeEnum.NotExistPreRegistCouponException.getCode(), new String[]{couponCD});
-		}
+
 		resultCoupon.setCouponNM(couponInfo.getCouponNM());
 		resultCoupon.setCouponDiv(couponInfo.getCouponDiv());
 		resultCoupon.setUserID(publishRequest.getUserID());

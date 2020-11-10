@@ -20,6 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface CouponDao extends JpaRepository<Coupon, Long>  {
 
-	public Coupon findByCouponNO(String couponNO) throws Exception;
+	public Optional<Coupon> findByCouponNO(String couponNO) throws Exception;
 
 }

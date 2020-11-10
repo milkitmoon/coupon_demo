@@ -1,7 +1,8 @@
-package com.milkit.app.domain.couponinfo.service;
+package com.milkit.app.domain.coupon.couponnumber.service;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,8 @@ import com.milkit.app.domain.coupon.Coupon;
 import com.milkit.app.domain.couponinfo.CouponInfo;
 import com.milkit.app.domain.userinfo.UserInfo;
 import com.milkit.app.domain.userinfo.service.UserInfoServiceImpl;
+import com.milkit.app.enumer.CouponDivEnum;
+import com.milkit.app.enumer.ExpiryDivEnum;
 import com.milkit.app.util.StringUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,21 +33,32 @@ import org.slf4j.LoggerFactory;
 
 @SpringBootTest
 @Slf4j
-class CouponInfoServiceTest {
+class DatabaseCouponNumberGenerateDelegate2ServiceTest {
 
-
-	@Autowired
-    private CouponInfoServiceImpl couponInfoService;
 	
+	@Autowired
+    private DatabaseCouponNumberGenerateDelegate2ServiceImpl databaseCouponNumberGenerateDelegateService;
+
+
 	
 	@Test
-	@DisplayName("쿠폰코드에 따른 쿠폰기본정보를 조회한다.")
-	public void getCouponInfo_test() throws Exception {
+	@DisplayName("DB기반 Coupon number를 생성 테스트한다.")
+	public void generateCouponNumber_test() throws Exception {
 		String couponCD = "000001";
-		CouponInfo result = couponInfoService.getCouponInfo(couponCD);
-log.debug(StringUtil.toJsonString(result));
-		assertTrue(result.getCouponCD().equals(couponCD));
+		
+		CouponInfo couponInfo = new CouponInfo();
+		couponInfo.setCouponCD(couponCD);
+		couponInfo.setCouponNM("테스트쿠폰");
+		couponInfo.setCouponDiv(CouponDivEnum.BILL_COUPON.getValue());
+		couponInfo.setExpiryDiv(ExpiryDivEnum.EXPIRY_DATE.getValue());
+		couponInfo.setExpiryDay(365);
+		couponInfo.setFaceAmt(10000l);
+		couponInfo.setPubAmt(9000l);
+		couponInfo.setDcRate(0.f);
+		
+		String result = databaseCouponNumberGenerateDelegateService.generateCouponNumber(couponInfo);
+log.debug("result:"+result);
+		assertTrue(result != null);
 	}
-	
 
 }
