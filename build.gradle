@@ -35,7 +35,7 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	implementation 'com.opencsv:opencsv:4.4'
 
-	runtimeOnly 'com.h2database:h2'
+	compile 'com.h2database:h2'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -48,7 +48,7 @@ dependencies {
 	compile("org.apache.tomcat.embed:tomcat-embed-jasper:9.0.14")
     compile("javax.servlet:jstl:1.2")
     compile("net.coobird:thumbnailator:0.4.8")
-    compileOnly("org.projectlombok:lombok:1.18.16")
+    compile("org.projectlombok:lombok:1.18.16")
 
     compile("io.springfox:springfox-swagger2:2.9.2")
     compile("io.springfox:springfox-swagger-ui:2.9.2")

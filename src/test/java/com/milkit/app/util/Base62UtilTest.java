@@ -15,6 +15,7 @@ import java.util.stream.IntStream;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,4 +47,5 @@ log.debug("decodeResult:"+decodeResult);
     	assumeTrue(decodeResult.equals(number));
 
 	}
+
 }

@@ -32,10 +32,9 @@ public class DatabaseCouponNumberGenerateDelegate2ServiceImpl implements CouponN
 		String couponNO = null;
 		
 		String couponCD = couponInfo.getCouponCD();
-		long result = couponNoSeqService.selectNextCouponnoSeq(couponCD) % 1000000;
 		long currTime = System.currentTimeMillis();
-
-		String couponSeqStr = StringUtil.leftPad(String.valueOf(result), "0", 6);
+		long couponnoSeq = couponNoSeqService.selectNextCouponnoSeq(couponCD) % 1000000;
+		String couponSeqStr = StringUtil.leftPad(String.valueOf(couponnoSeq), "0", 6);
 		
 		StringBuilder builder = new StringBuilder();
 		builder
@@ -45,7 +44,7 @@ public class DatabaseCouponNumberGenerateDelegate2ServiceImpl implements CouponN
 		;
 
 		String numericNO = builder.toString();
-log.debug("numericNO:"+numericNO);
+//log.debug("numericNO:"+numericNO);
 		couponNO = convertAlphanumericNO(numericNO);
 		
 		return couponNO;
