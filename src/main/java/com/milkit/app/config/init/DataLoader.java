@@ -68,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
 		couponInfo2.setFeeRate(50.0f);
 		couponInfo2.setExpiryDiv("1");
 		couponInfo2.setApprStartDT("20201001");
-		couponInfo2.setApprEndDT("20201231");
+		couponInfo2.setApprEndDT("20901231");
 		couponInfo2.setDescription("테스트 할인쿠폰정보");
 		
 		couponInfo2.setOperateStatus(OperateStatusEnum.CONFIRM.getValue());

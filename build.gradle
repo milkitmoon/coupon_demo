@@ -2,7 +2,6 @@ plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
-	id 'war'
 }
 
 group = 'com.milkit'
@@ -46,8 +45,11 @@ dependencies {
 	compile("org.apache.tomcat.embed:tomcat-embed-jasper:9.0.14")
     compile("javax.servlet:jstl:1.2")
     compile("net.coobird:thumbnailator:0.4.8")
-    compile("org.projectlombok:lombok:1.18.16")
 	compile("com.h2database:h2")
+    compileOnly("org.projectlombok:lombok:1.18.16")
+	testCompileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 
     compile("io.springfox:springfox-swagger2:2.9.2")
     compile("io.springfox:springfox-swagger-ui:2.9.2")
@@ -57,10 +59,4 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-war {
-	enabled = true
-	baseName = 'coupon_demo'
-	archiveName = '${archiveBaseName}.${extension}'
 }
