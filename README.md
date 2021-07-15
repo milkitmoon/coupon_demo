@@ -90,7 +90,7 @@
 ---
 
 ## API 호출 예
-- http://localhost:8080/api/api/coupon/publish 등과 같이 서버에서 제공하는 api를 호출하여 API 명세에 제공된 정보를 요청합니다.
+- http://localhost:8080/api/coupon/publish 등과 같이 서버에서 제공하는 api를 호출하여 API 명세에 제공된 정보를 요청합니다.
 <img src="https://user-images.githubusercontent.com/61044774/98206411-2fe76900-1f7d-11eb-8a57-2be3cc28c694.jpg" width="90%"></img>
   * <span style="color:red">사용자는 API 호출 시 상기 [인증요청] 에서 응답받은 JWT accessToken 값을 HTTP Header의 Authorization 항목에 입력하여 전송하여야 합니다.</span>  
     ex) Request HEADER의 Authorization 값 형식
@@ -104,7 +104,7 @@
 ## 쿠폰발행
 - 사용자는 쿠폰을 발급받고자 할때 서버에게 쿠폰발행을 요청합니다.
 
-  * URL : POST http://localhost:8080/api/api/coupon/publish
+  * URL : POST http://localhost:8080/api/coupon/publish
   * 요청 Body
 
 
@@ -145,7 +145,7 @@
 ## 쿠폰사용
 - 사용자는 발행된 쿠폰으로 서버에게 사용요청 할 수 있습니다.
 
-  * URL : PUT http://localhost:8080/api/api/coupon/use
+  * URL : PUT http://localhost:8080/api/coupon/use
   * 요청 Body
 
 
@@ -181,7 +181,7 @@
 ## 쿠폰취소
 - 사용자는 사용된 쿠폰을 취소하고자 한다. 취소된 쿠폰은 다시 사용할 수 있는 상태로 돌아간다.
 
-  * URL : PUT http://localhost:8080/api/api/coupon/cancel
+  * URL : PUT http://localhost:8080/api/coupon/cancel
   * 요청 Body
 
 
@@ -214,7 +214,7 @@
 ## 쿠폰폐기
 - 사용자는 쿠폰을 폐기하고자 한다. 폐기된 쿠폰은 다시 사용할 수 없다. 또한 이미 사용된 쿠폰은 폐기할 수 없다.
 
-  * URL : PUT http://localhost:8080/api/api/coupon/discard
+  * URL : PUT http://localhost:8080/api/coupon/discard
   * 요청 Body
 
 
@@ -243,7 +243,7 @@
 ## 쿠폰조회
 - 사용자는 쿠폰의 정보를 조회할 수 있습니다.
 
-  * URL : GET http://localhost:8080/api/api/coupon/query?userID=[사용자정보]&couponNO=[쿠폰번호]
+  * URL : GET http://localhost:8080/api/coupon/query?userID=[사용자정보]&couponNO=[쿠폰번호]
   * 요청 Body
 
   * 응답 Body
