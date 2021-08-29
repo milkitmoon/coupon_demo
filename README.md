@@ -254,7 +254,7 @@
     "message": "성공했습니다",
     "value": {
       "couponCD": "000001",             /*  쿠폰코드  */
-      "couponNO": "000019xtf1u6",   /*  쿠폰번호  */
+      "couponNO": "000019xtf1u6",       /*  쿠폰번호  */
       "userID": "milkit.moon",
       "pubDT": "20201027",
       "apprStartDT": "20201027",        /*  승인시작일자  */
